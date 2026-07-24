@@ -5,7 +5,7 @@ import { Josefin_Sans } from "next/font/google";
 const josefin = Josefin_Sans({
   subsets: ["latin"],
   display: "swap",
-});
+}); 
 
 export const metadata = {
   title: {
