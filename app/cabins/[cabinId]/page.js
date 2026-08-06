@@ -1,10 +1,7 @@
 import Image from "next/image"
 import { getCabin, getCabins } from "@/app/lib/data-service"
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
-
-// export const metadata = {
-//   title:"Cabin",
-// };
+import TextExpander from "@/app/components/TextExpander";
 
 export async function generateMetadata({params}){
   const { name } = await getCabin(params.cabinId);
@@ -16,7 +13,6 @@ export async function generateStaticParams(){
   const ids = cabins.map((cabin) => ({cabinId: String(cabin.id)}));
   // console.log(ids)
   return ids;
-  
 }
 
 export default async function Page({ params } ) {
@@ -36,7 +32,9 @@ export default async function Page({ params } ) {
             Cabin {name}
           </h3>
 
-          <p className="text-lg text-primary-300 mb-10">{description}</p>
+          <p className="text-lg text-primary-300 mb-10">
+            <TextExpander>{description}</TextExpander>
+          </p>
 
           <ul className="flex flex-col gap-4 mb-7">
             <li className="flex gap-3 items-center">
