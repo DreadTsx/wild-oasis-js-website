@@ -143,6 +143,7 @@ export async function getSettings() {
 export async function getCountries() {
   try {
     const res = await fetch(
+      // 'https://api.restcountries.com/countries/v5/all?fields=name,flag',{ headers: { 'Authorization': 'Bearer rc_live_cd822562c6224c648ebc8627b50daf67' }}
       'https://restcountries.com/v2/all?fields=name,flag'
     );
     const countries = await res.json();
