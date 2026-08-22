@@ -1,5 +1,5 @@
-import NextAuth from 'next-auth';
-import GoogleProvider from 'next-auth/providers/google';
+import NextAuth from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
 
 const authConfig = {
   providers: [
@@ -14,5 +14,3 @@ export const {
   auth,
   handlers: { GET, POST },
 } = NextAuth(authConfig);
-
-
